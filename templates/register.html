@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% set title = 'Register' %}
+{% set page_active = 'login' %}
+
+{% block _content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-12 text-center">
+        <h4>Register</h4>
+    </div>
+    <div class="col-6">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" id="username"  placeholder="Isikan Username">
+                
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Isikan Password">
+            </div>
+            <div class="mb-3">
+                <label for="password_1" class="form-label">Konfirmasi Password</label>
+                <input type="password" name="password_1" class="form-control" id="password_1" placeholder="Isikan Password">
+            </div>
+            <div class="text-center">
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 text-center mt-1">
+        <a href="/login">Sudah Memiliki Akun ? Login</a>
+    </div>
+</div>
+{% endblock%}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% set title = 'Edit Mahasiswa' %}
+{% set page_active = 'mahasiswa' %}
+
+{% block _content %}
+<div class="row mt-5">
+    <div class="col-12">
+        <h1>Edit Mahasiswa</h1>
+
+    </div>
+    <div class="col-12 mt-3">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
+                    placeholder="Masukkan Nama Lengkap" required value="{{ mahasiswa.nama_lengkap }}">
+            </div>
+            <div class="mb-3">
+                <label for="nim" class="form-label">NIM</label>
+                <input type="text" class="form-control" id="nim" name="nim" placeholder="Masukkan Nama Lengkap" required
+                    value="{{ mahasiswa.nim }}">
+            </div>
+            <div class="mb-3">
+                <label for="jurusan" class="form-label">Jurusan</label>
+                <select class="form-select" id="jurusan" name="jurusan" aria-label="Default select example" required="">
+                    <option selected>Pilih Satu</option>
+                    <option value="Manajemen" {% if mahasiswa.jurusan=='Manajemen' %} selected {% endif %}>Manajemen
+                    </option>
+                    <option value="Teknik Informatika" {% if mahasiswa.jurusan=='Teknik Informatika' %} selected {%
+                        endif %}>Teknik Informatika</option>
+                    <option value="Komunikasi" {% if mahasiswa.jurusan=='Komunikasi' %} selected {% endif %}>Komunikasi
+                    </option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="pria" value="pria" {% if mahasiswa.jenis_kelamin=='Pria' %} checked {% endif %}>
+                    <label class="form-check-label" for="pria">
+                        Pria
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="wanita" {% if mahasiswa.jenis_kelamin=='wanita' %} checked {% endif %} value="wanita">
+                    <label class="form-check-label" for="wanita" >
+                        Wanita
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status" aria-label="Default select example"
+                    required="required">
+                    <option value="">Pilih Satu</option>
+                    <option value="Aktif" {% if mahasiswa.status=='Aktif' %} selected {% endif %}>Aktif</option>
+                    <option value="Tidak Aktif" {% if mahasiswa.status=='Tidak Aktif' %} selected {% endif %}>Tidak
+                        Aktif</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" required
+                    value="{{ mahasiswa.tgl_lahir }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+            <a href="/mahasiswa" class="btn btn-danger">Kembali</a>
+        </form>
+
+    </div>
+</div>
+{% endblock%}

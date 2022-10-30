@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% set title = 'Lihat Mahasiswa' %}
+{% set page_active = 'mahasiswa' %}
+
+{% block _content %}
+<div class="row mt-5">
+    <div class="col-12">
+        <a href="/mahasiswa" class="btn btn-primary">Kembali</a>
+    </div>
+    <div class="col-12 mt-3">
+        <div class="mb-3">
+            <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" value="{{ mahasiswa.nama_lengkap }}" disabled >
+        </div>
+        <div class="mb-3">
+            <label for="nama_lengkap" class="form-label">NIM</label>
+            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" value="{{ mahasiswa.nim }}" disabled >
+        </div>
+        <div class="mb-3">
+            <label for="nama_lengkap" class="form-label">Jurusan</label>
+            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" value="{{ mahasiswa.jurusan }}" disabled >
+        </div>
+
+    </div>
+</div>
+{% endblock%}
